@@ -1,0 +1,9 @@
+body#content {
+    /* background-image: url(Cool Dad.jpg); */
+    background-color: rgba(52, 255, 3, 0.6);
+    background-blend-mode: lighten;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center;
+    height: 100%; 
+}

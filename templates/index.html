@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <!-- This one is for GitHub -->
+    <!-- <link rel="stylesheet" href="main_css.css"> -->
+    <!-- this one is for Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main_css.css') }}">
+    <script type="text/javascript">
+        function showImage(image_id){
+            console.log(image_id);
+            var element = document.getElementById(image_id);
+            element.style.display="block";
+            var button = document.getElementById("mainButton");
+            if (image_id.slice(0, 5) == "photo") {
+                if (image_id == "photo1") {
+                    button.onclick = function() {showImage('photo2');};
+                    button.innerHTML = "See a cute photo!";
+                    // var div = document.getElementById( 'div' );
+                    // var newText = document.createElement( 'textarea' ); // create new textarea
+                }
+                if (image_id == "photo2") {
+                    button.onclick = function() {showImage('photo3');};
+                    button.innerHTML = "See a garden (with you!)";
+                }
+                if (image_id == "photo3") {
+                    button.onclick = function() {showImage('photo4');};
+                    button.innerHTML = "At Harvard!";
+                }
+                if (image_id == "photo4") {
+                    button.onclick = function() {showImage('photo5');};
+                    button.innerHTML = "All of us!";
+                }
+                if (image_id == "photo5") {
+                    button.onclick = function() {showImage('present');};
+                    button.innerHTML = "See your present!";
+                }
+                // create a line break after the photo
+                element.parentNode.insertBefore(document.createElement('br'), element.nextSibling);
+            } else if (image_id == "present") {
+                button.onclick = function() {showImage('message');};
+                button.innerHTML = "See the birthday message!";
+            }
+        }
+    </script>
+</head>
+
+<body id="content">
+    <h1>Happy Birthday Dad!</h1>
+    
+    
+    I hope you are having a fantastic day!<br/>
+    <img id="photo1" src="{{ url_for('static', filename='Dad Cool.jpg') }}" style="display:none; height:300px;" />
+    <img id="photo2" src="{{ url_for('static', filename='Dad with Mom.jpg') }}" style="display:none; height:300px;" />
+    <img id="photo3" src="{{ url_for('static', filename='Dad at Rose Garden.jpg') }}" style="display:none; height:300px;" />
+    <img id="photo4" src="{{ url_for('static', filename='Dad at Harvard.jpg') }}" style="display:none; height:300px;" />
+    <img id="photo5" src="{{ url_for('static', filename='Dad at Parade.jpg') }}" style="display:none; height:300px;" />
+    <div id="present" style="display:none">
+        This card is good for:<br/>
+        <ul>
+            <li>One game learned</li>
+            <li>A big hug! (Once I get back home)</li>
+            <li>A chore done in QQWC fashion (Quickly, Quietly, and Without Complaining)</li>
+            <li>A grateful son :)</li>
+        </ul>
+        <br/>
+    </div>
+    <button id="mainButton" onclick="showImage('photo1');">Click here to see an epic photo!</button><br/>
+</body>

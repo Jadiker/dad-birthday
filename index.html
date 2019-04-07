@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <head>
     <!-- This one is for GitHub -->
-    <!-- <link rel="stylesheet" href="main_css.css"> -->
+    <link rel="stylesheet" href="main_css.css">
     <!-- this one is for Flask -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main_css.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/main_css.css') }}"> -->
     <script type="text/javascript">
         function showImage(image_id){
             console.log(image_id);
@@ -55,11 +55,12 @@
     
     
     I hope you are having a fantastic day!<br/>
-    <img id="photo1" src="{{ url_for('static', filename='Dad Cool.jpg') }}" style="display:none; height:300px;" />
-    <img id="photo2" src="{{ url_for('static', filename='Dad with Mom.jpg') }}" style="display:none; height:300px;" />
-    <img id="photo3" src="{{ url_for('static', filename='Dad at Rose Garden.jpg') }}" style="display:none; height:300px;" />
-    <img id="photo4" src="{{ url_for('static', filename='Dad at Harvard.jpg') }}" style="display:none; height:300px;" />
-    <img id="photo5" src="{{ url_for('static', filename='Dad at Parade.jpg') }}" style="display:none; height:300px;" />
+    <!-- Replaced \{\{ url_for\('static', filename='(.*?)'\) \}\} with $1 to get the new src -->
+    <img id="photo1" src="Dad Cool.jpg" style="display:none; height:300px;" />
+    <img id="photo2" src="Dad with Mom.jpg" style="display:none; height:300px;" />
+    <img id="photo3" src="Dad at Rose Garden.jpg" style="display:none; height:300px;" />
+    <img id="photo4" src="Dad at Harvard.jpg" style="display:none; height:300px;" />
+    <img id="photo5" src="Dad at Parade.jpg" style="display:none; height:300px;" />
     <div id="present" style="display:none">
         This card is good for:<br/>
         <ul>

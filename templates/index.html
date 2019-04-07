@@ -38,6 +38,13 @@
             } else if (image_id == "present") {
                 button.onclick = function() {showImage('message');};
                 button.innerHTML = "See the birthday message!";
+            } else if (image_id == "message") {
+                button.onclick = function() {showImage('birthday');};
+                button.innerHTML = "Happy Birthday!";
+            } else if (image_id == "birthday") {
+                var birthday = document.createElement('p');
+                birthday.innerHTML = "Happy Birthday!";
+                element.parentNode.insertBefore(birthday, element.nextSibling);
             }
         }
     </script>
@@ -61,7 +68,13 @@
             <li>A chore done in QQWC fashion (Quickly, Quietly, and Without Complaining)</li>
             <li>A grateful son :)</li>
         </ul>
-        <br/>
     </div>
+    <div id="message" style="display:none">
+        Happy Birthday Dad!<br/>
+        Thanks for being such a wonderful dad and helping me to get closer to accomplishing my dreams.<br/>
+        I hope you have a great birthday and that the year is filled with tons of laughter and accomplished goals (even if they're small).<br/>
+        Love you!!
+    </div>
+    <div id="birthday" style:"display:none"></div> 
     <button id="mainButton" onclick="showImage('photo1');">Click here to see an epic photo!</button><br/>
 </body>
